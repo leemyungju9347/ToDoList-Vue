@@ -8,12 +8,11 @@ import '@babel/polyfill'
 Vue.config.productionTip = false
 
 export const eventBus = new Vue({
-    methods:{
-      listEdit(memo,index,mode,display){
-        this.$emit('listEdit',memo,index,mode,display)
-      },
-
+  methods:{
+    listEdit(memo,index){
+      this.$emit('listEdit',memo,index)
     }
+  }
 })
 
 new Vue({

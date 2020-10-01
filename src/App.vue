@@ -1,5 +1,8 @@
 <template>
-  <v-app>
+  <div id="app">
+    <Home></Home>
+  </div>
+  <!-- <v-app>
     <v-container class="grey lighten-4" fluid>
       <v-layout row wrap>
         <v-flex xs12>
@@ -7,7 +10,7 @@
         </v-flex>
       </v-layout>
     </v-container>
-  </v-app>
+  </v-app> -->
 </template>
 
 <script>
@@ -18,3 +21,9 @@ export default {
   }
 }
 </script>
+
+<style>
+@import './assets/css/common.css';
+@import './assets/css/reset.css';
+
+</style>
