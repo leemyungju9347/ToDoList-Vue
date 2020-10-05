@@ -1,7 +1,9 @@
 <template>
     <div class="home">
-        <p>전체할일: {{ todoList.length }} / 완료된 할일: {{ countDone }} / 남은할일: {{ todoList.length - countDone }}</p>
-        <AppHeader></AppHeader>
+        <!-- <p>전체할일: {{ todoList.length }} / 완료된 할일: {{ countDone }} / 남은할일: {{ todoList.length - countDone }}</p> -->
+        <AppHeader
+        :todoList="todoList"
+        ></AppHeader>
         <ListAdd
             @listAdd="listAdd"
             @listEdit="listEdit"
@@ -10,6 +12,7 @@
         :todoList="todoList"
         @statusControl="statusControl"
         @listDelete="listDelete"
+        @listClear="listClear"
         ></List>
     </div>
   <!-- <v-container>
@@ -67,13 +70,21 @@ export default {
             })
         },
         statusControl(index,status){
+            // this.todoList[index].status = status
+
+            console.log('위치는 home',index,status);
+
             this.todoList[index].status = status
+            console.log('잘됐는지 확인',this.todoList[index].status);
         },
         listDelete(index) {
             this.todoList.splice(index,1)
         },
         listEdit(memo,index){
             this.todoList[index].memo = memo
+        },
+        listClear() {
+            this.todoList = [];
         }
     }
 }

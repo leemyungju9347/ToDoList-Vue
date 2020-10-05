@@ -1,21 +1,26 @@
 <template>
   <div class="list-area">
-    <ul>
-      <li v-for="(list,index) in todoList" :key="index" :class="{'checked':list.status === 'done'}">
+    <!-- <ul> -->
+    <transition-group tag="ul" name="list">
+      <li v-for="(list,index) in todoList" :key="index + 0" :class="{'checked':list.status === 'done'}">
         <input class="checkbox" type="checkbox" name="" id="check">
-        <label for="check" @click="$emit('statusControl',index,'done')">
+        <label for="check" @click="statusControl($event,index)" name="done">
             <span>
               <i class="fas fa-check"></i>
             </span>
         </label>
         <span class="todo-txt">{{ list.memo }}</span>
-        <strong>{{list.status}}</strong>
         <div class="btn-box">
           <button class="edit-btn" v-if="list.status === 'created'" @click="listEdit(list.memo,index)"><i class="fas fa-pen"></i></button>
-          <button class="delete-btn" @click="$emit('listDelete',index)"><i class="fas fa-trash-alt"></i></button>
+          <button class="delete-btn" @click="$emit('listDelete',index)">
+            <i class="fas fa-trash-alt"></i>
+          </button>
         </div>
       </li>
-    </ul>
+    </transition-group>
+    <button v-if="todoList.length > 0" class="clear-btn" @click="$emit('listClear')">delete all</button>
+    <!-- </ul> -->
+    
     <!-- <v-card
     :id="index"
     :class="{'done': list.status === 'done', 'edit': list.mode === 'edit'}" 
@@ -84,6 +89,13 @@ export default {
   methods:{
     listEdit(memo,index){
       eventBus.listEdit(memo,index)
+    },
+    statusControl(event,index){
+      if( this.todoList[index].status === 'created' ) {
+        this.$emit('statusControl',index,'done');
+      }else{
+        this.$emit('statusControl',index,'created');
+      }
     }
   }
 }
@@ -149,14 +161,4 @@ export default {
 </script>
 
 <style>
-/* .done{
-  background-color: rgba(0, 0, 0, 0.1) !important;
-}
-.edit{
-  background-color: rgba(98, 123, 233, 0.1) !important;
-}
-.done p {
-  text-decoration: line-through;
-  color: rgba(0, 0, 0, 0.5);
-} */
 </style>

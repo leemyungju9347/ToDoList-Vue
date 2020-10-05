@@ -1,25 +1,16 @@
 <template>
   <div class="listAdd-area">
-    <form action="" class="listAdd-form" @submit.prevent="listAdd">
+    <form action="" class="listAdd-form" @submit.prevent="listSubmit">
       <input type="text" class="list-input" v-model="memo" placeholder="할일을 입력해주세요."> 
       <button class="add-btn" v-if="mode === 'add'">
         <span>리스트 추가</span>
         <i class="fas fa-plus"></i>
       </button>
-      <button class="edit-btn" @click="listEdit" v-else>
+      <button class="edit-btn" v-else>
         <span>리스트 수정</span>
         <i class="fas fa-pen"></i>
       </button>
     </form>
-    <!-- <v-textarea
-      outlined
-      v-model="memo"
-      label="투두리스트를 입력해주세요."
-      value=""
-      @keypress.enter="enterKey"
-    ></v-textarea>
-    <v-btn v-if="mode === 'add'" @click="listAdd">리스트추가</v-btn>
-    <v-btn v-else @click="listEdit">리스트수정</v-btn> -->
   </div>
 </template>
 <script>
@@ -42,11 +33,17 @@ export default {
     })
   },
   methods: {
+    listSubmit() {
+      if(this.mode === 'add' ) {
+        this.listAdd();
+        
+      }else {
+        this.listEdit();
+      }
+    },
     listAdd(){
-      console.log(this.memo);
-      console.log('리스트 추가!');
       if( this.memo === null ){
-        console.log('할일을 입력해주세요!');
+        alert('할일을 입력해주세요!');
       }else {
         this.$emit('listAdd',this.memo)
         this.memo = null
@@ -54,7 +51,7 @@ export default {
     },
     listEdit(){
       if( this.memo === null ){
-        console.log('할일을 입력해주세요!');
+        alert('할일을 입력해주세요!');
       }else {
         this.$emit('listEdit',this.memo,this.index)
         this.memo = null
