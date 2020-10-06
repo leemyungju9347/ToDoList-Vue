@@ -16,7 +16,7 @@ function todayForm() {
     date = date >= 10 ? date : `0${date}`;
     const day = dayNames[today.getDay()];
 
-    return `${month}/${date} ${day}.`
+    return `${month}/${date} ${day}`
 }
 
 export {todayForm}

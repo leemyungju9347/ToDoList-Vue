@@ -1,15 +1,42 @@
 
 @media screen and (max-width:1023px) {
     body {
-        background-color: lightsalmon;
+        /* background-color: lightsalmon; */
     }
 
     #app {}
+
+    .home {
+        /* width: 100%; */
+        /* height: 60%; */
+        /* margin-top: 120px; */
+        /* margin-top:70px; */
+        margin:70px auto 0;
+        width: 80%;
+        min-width:500px;
+    }
+
+    .header > h1 {
+        /* font-size: 3em; */
+    }
+
+    
+
+    .list-area {
+        /* height: 400px; */
+    }
+
+    .listAdd-area > .listAdd-form {
+    }
+
+    .listAdd-area > .listAdd-form > .list-input { 
+        /* width: 100%; */
+    }
 }
 
-@media screen and (max-width:769px) {
+@media screen and (max-width:768px) {
     body {
-        /* background-color: mediumpurple; */
+        background-color: mediumpurple;
         /* height: 100vh; */
 
     }
@@ -19,33 +46,7 @@
         /* width: 100%; */
     }
 
-    .home {
-        /* width: 100%; */
-        /* height: 60%; */
-        /* margin-top: 120px; */
-        /* margin-top:70px; */
-        margin:70px auto 0;
-        width: 80%;
-        min-width:400px;
-    }
-
-    .header > h1 {
-        font-size: 3em;
-    }
-
     
-
-    .list-area {
-        height: 400px;
-    }
-
-    .listAdd-area > .listAdd-form {
-        width: 100%;
-    }
-
-    .listAdd-area > .listAdd-form > .list-input { 
-        /* width: 100%; */
-    }
 
     
 }
