@@ -1,5 +1,5 @@
 #app {
-    min-width:450px;
+    min-width: 360px;
 }
 
 /*---------- home -----------*/
@@ -57,7 +57,8 @@
 .header > p {
     font-size: 1.3em;
     background: linear-gradient(#fff 50%, #ffcb8b 50%);
-    display: inline;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 
