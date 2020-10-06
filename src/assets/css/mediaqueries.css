@@ -1,13 +1,51 @@
 
 @media screen and (max-width:1023px) {
     body {
-        /* background-color: lightsalmon; */
+        background-color: lightsalmon;
     }
+
+    #app {}
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:769px) {
     body {
         /* background-color: mediumpurple; */
+        /* height: 100vh; */
 
     }
+
+    #app {
+        /* height: 100%; */
+        /* width: 100%; */
+    }
+
+    .home {
+        /* width: 100%; */
+        /* height: 60%; */
+        /* margin-top: 120px; */
+        /* margin-top:70px; */
+        margin:70px auto 0;
+        width: 80%;
+        min-width:400px;
+    }
+
+    .header > h1 {
+        font-size: 3em;
+    }
+
+    
+
+    .list-area {
+        height: 400px;
+    }
+
+    .listAdd-area > .listAdd-form {
+        width: 100%;
+    }
+
+    .listAdd-area > .listAdd-form > .list-input { 
+        /* width: 100%; */
+    }
+
+    
 }
