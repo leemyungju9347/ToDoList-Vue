@@ -95,7 +95,7 @@
 
 /*---------- list -----------*/
 .list-area {
-    padding-top:80px;
+    padding-top: 50px;
     position: relative;
     height: 350px;
     overflow-x: hidden;
@@ -205,7 +205,7 @@
 
 .list-area > .clear-btn {
     position: absolute;
-    top: 45px;
+    top: 20px;
     right: 40px;
     color: #767676;
     font-size: 1.15em;
