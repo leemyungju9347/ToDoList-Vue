@@ -12,7 +12,7 @@ function todayForm() {
     const today = new Date();
     let month = today.getMonth() + 1;
     month = month >= 10 ? month : `0${month}`;
-    let date = today.getDay();
+    let date = today.getDate();
     date = date >= 10 ? date : `0${date}`;
     const day = dayNames[today.getDay()];
 
