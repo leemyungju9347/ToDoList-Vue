@@ -153,7 +153,8 @@
 .list-area > ul > li > .todo-txt {
     margin-left:10px;
     margin-right: 30px;
-    position: relative;
+    position:absolute;
+    top: -3px;
     display: inline-block;
 }
 
@@ -163,9 +164,9 @@
 
 .list-area > ul > li > .edit-message {
     position: absolute;
-    color: #5563a2;
-    font-size: 0.8em;
-    left: 37px;
+    color: #a6a6a6;
+    font-size: 0.9em;
+    left: 27px;
     top: -2px;
     display: none;
 }
@@ -209,9 +210,6 @@
     top: 0;
 }
 
-/* .list-area > ul > li.edit > .btn-box > button > i {
-    color:  #767676;
-} */
 
 .list-area > ul > li > .btn-box > button + button {
     margin-left: 15px;
@@ -229,7 +227,7 @@
 
 .list-area > .clear-btn {
     position: absolute;
-    top: 20px;
+    top: 6px;
     right: 40px;
     color: #767676;
     font-size: 1.15em;
